@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            position: relative;
+            width: 239px;
+            height: 34px;
+            border: 1px solid black;
+        }
+        div::after {
+            /* before、after创建的是行内元素，因为添加了定位所以可以设置宽、高 */
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            transform: rotate(45deg);
+            transition: all 0.4s;
+        }
+        div:hover::after {
+            /* 小三角旋转90°，设置为45° + 180° = 225° */
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

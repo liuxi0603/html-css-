@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box {
+            position: relative;
+            width: 450px;
+            height: 260px;
+            margin: 0 auto;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .shaow {
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,.3) url(imgs/arr.png) no-repeat center;
+        }
+
+        /* 当我们经过最大的父盒子，就让里面的遮罩层显示出来 */
+        .box:hover .shaow{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="imgs/tudou.jpg" alt="">
+        <div class="shaow"></div>
+    </div>
+</body>
+</html>

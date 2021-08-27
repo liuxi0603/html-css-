@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?t83rx0');
+  src:  url('fonts/icomoon.eot?t83rx0#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?t83rx0') format('truetype'),
+    url('fonts/icomoon.woff?t83rx0') format('woff'),
+    url('fonts/icomoon.svg?t83rx0#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apacheflink:before {
+  content: "\e900";
+  color: #e6526f;
+}
+.icon-apachespark:before {
+  content: "\e901";
+  color: #e25a1c;
+}
+.icon-blender:before {
+  content: "\e902";
+  color: #f5792a;
+}
+.icon-csharp:before {
+  content: "\e903";
+  color: #239120;
+}
+.icon-evernote:before {
+  content: "\e904";
+  color: #00a82d;
+}
+.icon-buzzfeed:before {
+  content: "\e905";
+  color: #e32;
+}
+.icon-codewars:before {
+  content: "\e906";
+  color: #ad2c27;
+}
+.icon-gnu:before {
+  content: "\e907";
+  color: #a42e2b;
+}
+.icon-cheveron-down:before {
+  content: "\e908";
+}
+.icon-cheveron-left:before {
+  content: "\e909";
+}
+.icon-cheveron-right:before {
+  content: "\e90a";
+}
+.icon-photo:before {
+  content: "\e90b";
+}
+.icon-ctrl:before {
+  content: "\ea50";
+}
+.icon-shopping-cart:before {
+  content: "\e90c";
+}
+.icon-thumbs-up:before {
+  content: "\e90d";
+}
+.icon-trash-2:before {
+  content: "\e90e";
+}

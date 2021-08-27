@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .map {
+            position: relative;
+            width: 939px;
+            height: 754px;
+            background: url(images/map.png) no-repeat;
+            margin: 0 auto;
+        }
+        .city {
+            position: absolute;
+            top: 277px;
+            right: 245px;
+        }
+
+        .tb {
+            top: 600px;
+            right: 114px;
+        }
+
+        .gz {
+            top: 650px;
+            right: 245px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #09f;
+        }
+        .city div[class^="pulse"] {
+            /* 原本3个pulse是垂直摆放（标准流），添加position: absolute这行代码之后，
+            3个pulse盒子不再占有原本的位置，3个盒子堆叠在一起，排在dotted盒子后面 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+        /* 3个pulse不要同时调用动画，所以要添加延时delay */
+        /* 注意选择器权重问题 */
+        .map .city .pulse2 {
+            animation-delay: 0.4s;
+        }
+        .map .city .pulse3 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes pulse {
+            0% {}
+            70% {
+                /* 不使用scale缩放而是修改width、height的原因：scale会把阴影一起放大，达不到预期效果 */
+                /* transform: scale(5); */
+                width: 30px;
+                height: 30px;
+                opacity: 1;
+            }
+            100% {
+                width: 50px;
+                height: 50px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+</html>

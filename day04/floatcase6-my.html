@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 1480px;
+            height: 750px;
+            background-color: bisque;
+            margin: 50px auto;
+        }
+
+        .box .left {
+            width: 300px;
+            height: 750px;
+            background-color: lightblue;
+            float: left;
+        }
+
+        .box .right {
+            float: left;
+            width: 1180px;
+            height: 750px;
+            background-color: lightcoral;
+            
+        }
+
+        .right > div {
+            width: 1180px;
+            height: 370px;
+            background-color: olivedrab;
+            margin-bottom: 10px;
+        }
+
+        .up p {
+            float: left;
+            width: 285px;
+            height: 370px;
+            background-color: slateblue;
+            margin-left: 10px;
+        }
+
+        .down p {
+            float: left;
+            width: 285px;
+            height: 370px;
+            background-color: darkseagreen;
+            margin-left: 10px;
+        } 
+
+        /* .box .right .up {
+            float: left;
+            width: 1180px;
+            height: 370px;
+            background-color: cornflowerblue;
+            margin-bottom: 10px;
+            
+        } 
+
+        
+        .box .right .down {
+            float: left;
+            width: 1180px;
+            height: 370px;
+            background-color: thistle;
+        } 
+
+        
+        .box .right .up p {
+            float: left;
+            width: 285px;
+            height: 370px;
+            background-color: violet;
+            margin-left: 10px;
+            /* .box .right .up中有margin-bottom: 10px会遗传，因此要另外设置margin-top: 0 */
+             /* margin-top: 0;   */
+         }  
+
+        .box .right .down p {
+            float: left;
+            width: 285px;
+            height: 370px;
+            background-color:green;
+            margin-left: 10px;
+            /* 为什么 */
+        }  
+
+         .box .right .last {
+            /* margin-right: 0; */
+        }   */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left"></div>
+
+        <div class="right">
+
+            <div class="up">
+                
+                <p><a href=""></a></p>
+                <p><a href=""></a></p>
+                <p><a href=""></a></p>
+                <p class="last"><a href=""></a></p>
+            </div>
+
+            <div class="down">
+                <p><a href=""></a></p>
+                <p><a href=""></a></p>
+                <p><a href=""></a></p>
+                <p class="last"><a href=""></a></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            height: 50px;
+            background-color: violet;
+        }
+
+        .banner {
+            width: 1430px;
+            height: 250px;
+            background-color: tomato;
+            margin: 10px auto;
+        }
+
+        .box {
+            width: 1430px;
+            height: 500px;
+            background-color: steelblue;
+            margin: 0 auto;
+        }
+
+        .box div {
+            float: left;
+            width: 350px;
+            height: 500px;
+            margin-right: 10px;
+            background-color: palevioletred;
+        }
+
+        .box .last {
+            margin-right: 0;
+        }
+
+        .footer{
+            background-color: powderblue;
+            height: 200px;
+            margin: 10px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 快捷键 div.top+div.banner+div.box+div.footer -->
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box">
+        <!-- box会导致最后一个子盒子位置偏移，不写box即可 -->
+        box
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="last"></div>
+    </div>
+    <div class="footer">footer</div> 
+</body>
+</html>

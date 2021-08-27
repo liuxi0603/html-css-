@@ -1,0 +1,131 @@
+/* 列表页专有模块 */
+.nav {
+    overflow: hidden;
+}
+
+.sk {
+    position: absolute;
+    left: 184px;
+    top: 35px;
+    border-left: 1px solid #c81523;
+    padding: 3px 0 0 12px;
+    /* 不用给盒子设定宽高，由图片撑开即可 */
+    /* width: 74px;
+    height: 32px; */
+}
+
+.sk_list {
+    float: left;
+}
+.sk_list ul li{
+    float: left;
+}
+.sk_list ul li a {
+    line-height: 47px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    padding: 0 28px;
+}
+
+.sk_con {
+    float: right;
+}
+.sk_con ul li{
+    float: left;
+}
+.sk_con ul li a {
+    /* 当行高大于高度时，文字会偏下 */
+    /* 原本nav盒子height47px，此处设置的line-height: 49px，
+       导致nav溢出2px，会影响下面的盒子布局，所以要给nav盒子加上隐藏溢出，见list.css顶部 */
+    line-height: 49px;
+    font-size: 12px;
+    padding: 0 22px;
+}
+
+.sk_bd {
+    margin-top: 25px;
+}
+
+.sk_bd ul li {
+    float: left;
+    width: 290px;
+    height: 460px;
+    margin-right: 13px;
+    /* 1px宽的透明色边框 */
+    border: 1px solid transparent;
+}
+
+.sk_bd ul li img {
+    width: 100%;
+}
+
+.sk_bd ul li p {
+    font-size: 14px;
+    padding: 0 10px 0 12px;
+}
+
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.sk_bd ul li:hover {
+    border: 1px solid #c81523;
+}
+
+.price {
+    padding: 0 10px 0 12px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.price span:first-child {
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.price span:last-child {
+    color: gray;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.sale {
+    height: 14px;
+    padding: 0 10px 0 12px;
+}
+
+.sale span {
+    font-size: 14px;
+}
+
+.sale > div {
+    display: inline-block;
+    width: 133px;
+    height: 14px;
+    border-radius: 7px;
+    border: 1px solid #c81523;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.sale .jindu {
+    width: 100px;
+    /* 高度 减去了父盒子的上下边框 */
+    height: 12px;
+    background-color: #c81523;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    
+}
+
+.sk_bd ul li footer {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: #c81523;
+    margin-top: 17px;
+}

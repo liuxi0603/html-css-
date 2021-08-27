@@ -1,0 +1,368 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    /* 永远没有x方向的滚动轴 */
+    overflow-x: hidden;
+    /* 高亮背景色效果变透明 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* CSS3盒子模型 */
+div {
+    box-sizing: border-box;
+}
+
+.search-index {
+    display: flex;
+    position: fixed;
+    /* 固定定位的盒子，需要使用left、top来居中对齐，margin没作用 */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 固定定位的盒子必须有宽度 */
+    width: 100%;
+    /* 固定定位跟父级没有关系，以可视屏幕为准，
+    为了使得在PC端等其他设备打开页面不会变得很大，所以要设置最大、最小宽度 */
+    max-width: 540px;
+    min-width: 320px;
+    height: 44px;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search {
+    position: relative;
+    height: 26px;
+    /* c3盒子模型包含了边框，行高应该减去上下边框，否则文字会有点偏下而不是居中 */
+    line-height: 24px;
+    border: 1px solid #ccc;
+    flex: 1;
+    font-size: 12px;
+    color: #666;
+    margin: 8px 10px;
+    padding-left: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.search::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px; 
+    background: url(../images/sprite.png) no-repeat -60px -280px;
+    background-size: 104px auto;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: '';
+    /* 伪元素是行内元素，需要转换显示模式才能设置宽高，
+    只有设置了宽高，插入的背景图片才能显示出来 */
+    display: block;
+    width: 23px;
+    height: 23px;
+    /* 二倍精灵图 */
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+
+/* 上面搜索的盒子是固定定位，不占原来的位置，会遮挡部分图片内容 */
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+.local-nav a {
+    /* 给a加display: flex，这样a里面的子盒子span就可以直接设置宽、高 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+nav {
+    /* 显示笑颜叫需要隐藏溢出的部分 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+}
+
+.nav-common {
+    display: flex;
+    height: 88px;
+}
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-items a {
+    flex: 1;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0,0,0,.2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+/* 第一个.nav-items里面的a不需要下边框 */
+.nav-common .nav-items:nth-child(1) a{
+    border: none;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 131px auto;
+}
+
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+/* 颜色渐变 */
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #fa6b53, #fa974d);
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4c96ed, #4c91ed);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #42c796, #68d45e);
+}
+
+.subnav-entry {
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.subnav-entry li {
+    /* flex: 1; */
+    /* 这里不适合写份数，而是使用百分比明确规定每个li的宽度，否则无法实现换行,%是相对于父级来说 */
+    flex: 20%;
+}
+
+/* 这样的话，a里面的子盒子可以直接设置宽高了 */
+.subnav-entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+.subnav-entry li [class^="subnav-entry-icon"] {
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-bg.png) no-repeat 0 0;
+    background-size: 28px auto;
+}
+
+/* 考虑选择器权重问题 */
+.subnav-entry li .subnav-entry-icon-icon2 {
+    background-position: 0 -29px;
+}
+.subnav-entry li .subnav-entry-icon-icon3 {
+    background-position: 0 -62px;
+}
+.subnav-entry li .subnav-entry-icon-icon4 {
+    background-position: 0 -96px;
+}
+.subnav-entry li .subnav-entry-icon-icon5 {
+    background-position: 0 -130px;
+}
+.subnav-entry li .subnav-entry-icon-icon6 {
+    background-position: 0 -162px;
+}
+.subnav-entry li .subnav-entry-icon-icon7 {
+    background-position: 0 -196px;
+}
+.subnav-entry li .subnav-entry-icon-icon8 {
+    background-position: 0 -226px;
+}
+.subnav-entry li .subnav-entry-icon-icon9 {
+    background-position: 0 -255px;
+}
+.subnav-entry li .subnav-entry-icon-icon10 {
+    background-position: 0 -285px;
+}
+
+.sales-box {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    position: relative;
+    text-indent: -99999px;
+    overflow: hidden;
+}
+
+/* 伪元素是行内元素，无法直接设置宽高，此处用定位做，加了定位可以设置宽高 */
+.sales-hd h2::after {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    content: '';
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -21px;
+    background-size: 79px auto;
+}
+
+.more {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background: -webkit-linear-gradient(left,#ff506c,#ff6bc6);
+    border-radius: 15px;
+    padding: 3px 20px 3px 10px;
+    color: #fff;
+}
+
+.more::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    /* 图片太大超过了盒子的大小，设置img的width: 100% ，
+    100%是系那个对于img的父级，img的高度会等比例的进行缩放 */
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    height: 44px;
+    background-color: #fff;
+    margin: 4px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+footer a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+footer a [class^="footer-icon"] {
+    width: 28px;
+    height: 28px;
+    background: url(../images/subnav-bg.png) no-repeat 0 0;
+    background-size: 28px auto;
+}
+
+footer a .footer-icon-icon2 {
+    background-position: 0 -29px;
+}
+footer a .footer-icon-icon3 {
+    background-position: 0 -62px;
+}

@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    height: 42px;
+    margin: 30px auto;
+    /* background-color: pink; */
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    /* a是行内元素，要先转成块级元素才可以设置宽和高 */
+    display: block;
+    height: 42px;
+    /* 不指定每个a标签的宽度，通过设置左右的padding值，根据每个a标签的内容多少自动调整大小 */
+    padding: 0 10px;
+    line-height: 42px;
+    color: #050505;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+
+}
+
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    margin-left: 50px;
+}
+
+/* input和button是表单元素 ，属于行内块，中间默认会有margin缝隙，需要设置浮动 */
+.search .input {
+    float: left;
+    /* 指定了宽度，由于设置  padding-left: 15px 会撑大盒子，因此宽度要减去15px，再减1px左边框*/
+    /* width: 360px; */
+    /* 也可以考虑用首行缩进来做，则不用考虑宽度是否要减去相应的值 */
+    width: 345px;
+    /* 边框会撑大大盒子，所以输入款的高度要减去上下边框的像素 */
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 51px;
+    height: 42px;
+    background: url(imgs/button.png);
+    /* 按钮button默认自带边框，可手动去除 */
+    border: 0;
+}
+
+.user {
+    /* 未指定父盒子的宽、高 */
+    float: right;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 25px;
+    font-size: 14px;
+    color: #666;  
+}
+
+.linetwo {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.banner {
+    height: 420px;
+    background: url(imgs/banner1.png) no-repeat top center;
+}
+
+.banner .left {
+    float: left;
+    width: 190px;
+    height: 420px;
+    /*背景色： 黑色 半透明 */
+    background: rgba(0,0,0,.3);
+}
+
+.left ul li {
+    height: 45px;
+    line-height: 45px;
+    /* 这里设置了左右的padding值，没有指定盒子的宽度，所以不会撑大盒子 */
+    padding: 0 20px; 
+}
+
+ .left ul li a {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.left ul li a span {
+    /* 因为小li有pandding值，所以>不会顶到最后 */
+    float: right;
+    font-size: 14px;
+}
+
+/* 怎么设置伪类 */
+.left ul li a:hover {
+    color: #0681c4;
+}
+
+ .course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    /* 浮动的盒子不会有外边距塌陷问题 */
+    margin-top: 50px;
+    background-color: #ffffff;
+}
+
+ .course h1 {
+    width: 230px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #9bceea; 
+    color: #ffffff;
+}
+
+ .down {
+    padding: 0 20px;
+}
+
+ .down ul li {
+     /* 使用padding来撑开盒子 */
+    padding: 12px 0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+ .down ul li h4 {
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+ .down ul li p {
+    font-size: 12px;
+    color: #d0d0d0;
+}
+
+
+ .down a {
+    display: block;
+    height: 40px;
+    margin-top: 10px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #00a4ff;
+    text-align: center;
+    border: 1px solid #00a4ff; 
+}
+
+.inbox {
+    height: 60px;
+    /* 行高会继承给3个孩子 */
+    line-height: 60px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 3px 3px rgba(0,0,0,0.1);
+}
+
+.inbox ul {
+    float: left;
+    margin-left: 30px;
+} 
+
+ .inbox ul li {
+    float: left;
+}
+
+/* 老师写的，给每个小li添加左边框 */
+.inbox h3 {
+    float: left;
+    color: #00a4ff;
+    font-weight: 700;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+.inbox ul li a {
+    padding: 0 35px;
+    border-left: 1px solid #7d7d7d; 
+    color: black;
+}
+
+
+/* 我写的 */
+/* .inbox h3 {
+    float: left;
+    color: #00a4ff;
+    font-weight: 700;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin: 20px 0;
+    padding: 0 35px;
+    border-right: 1px solid #7d7d7d;
+}
+
+
+.inbox ul li a {
+    height: 20px;
+    line-height: 20px;
+    margin: 20px 0;
+    padding: 0 35px;
+    border-right: 1px solid #7d7d7d; 
+    color: black;
+}
+
+ .inbox ul li .last {
+    border: 0;
+}   */
+
+.inbox div {
+    float: right;
+    margin-right: 28px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+.boxone {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.boxone .boxone-hd {
+    height: 45px;
+}
+
+.boxone .boxone-hd h3 {
+    float: left;
+    font-weight: normal;
+    font-style: 20px;
+    color: #686969;
+}
+
+.boxone .boxone-hd h5 {
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-style: 12px;
+    color: #42b2ff;
+}
+
+.boxone .boxone-bd {
+    width: 1225px;
+}
+
+.boxone .boxone-bd ul li {
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;  
+}
+
+.boxone .boxone-bd ul li .img {
+    position: absolute;
+    top: 8px;
+    right: -8px;
+}
+
+.boxone .boxone-bd ul li > img {
+    width: 100%;
+    
+}
+
+.boxone-bd ul li a h4 {
+    margin: 20px 20px 20px 25px;
+    font-style: 14px;
+    font-weight: normal;
+    color: #050505;
+}
+
+.boxone-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.boxone-bd .info span {
+    color: #ff7c2d;
+}
+
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table; 
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  } 
+
+
+.boxtwo-hd {
+    height: 45px;
+    margin-top: 25px;
+}
+
+.title-l {
+    float: left;
+    width: 228px;
+    font-style: 20px;
+    font-weight: normal;
+    color: #686969;
+}
+
+.title-m {
+    float: left;
+    margin-left: 15px;
+}
+
+.title-r {
+    float: right;
+    margin-right: 30px;
+    margin-top: 3px;
+    font-style: 12px;
+    color: #999;
+}
+
+.title-m li {
+    float: left;
+    /* 热门和初级之间相距70px，因此每个小li的padding是35px */
+    padding: 0 35px;
+    margin-top: 3px;
+}
+
+.title-m li a {
+    font-size: 16px;
+    color: #999;
+}
+
+.title-m .hot a {
+    /* 热门二字距离中间盒子的边框距离是185px，由于每个小li设置了padding值35，需要减去padding值 */
+    margin-left: 185px;
+    margin-left: 150px;
+    color: #00a4ff;
+}
+
+.boxtwo .left {
+    float: left;
+    width: 228px;
+    height: 390px;
+}
+
+.boxtwo .left img {
+    width: 100%;
+}
+
+.boxtwo .right {
+    float: left;
+    width: 957px;
+    height: 390px;
+    margin-left: 15px;
+}
+
+.right-up {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.boxtwo .right .right-down {
+    width: 972px;
+    height: 270px;
+}
+
+.boxtwo-bd .right-down ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    background-color: #fff; 
+}
+
+.right-down ul li a h4 {
+    /* h4标题内容有的占一行，有的占两行，为了使.info的内容一样高，需要给h4加上宽、高*/
+    width: 188px;
+    height: 55px;
+    margin: 20px 20px 0 25px;
+    font-style: 14px;
+    font-weight: normal;
+    color: #050505;
+}
+
+.right-down ul li .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+
+}
+.right-down ul li .info span {
+    color: #ff7c2d;
+}
+
+.footer {
+    height: 415px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+.footer .w {
+    /* 注意会有外边距塌陷问题 */
+    /* margin-top: 35px; */
+    padding-top: 35px;
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    margin: 20px 0 15px 0;
+    font-style: 12px;
+    color: #666;
+}
+
+.copyright .app {
+    display: block;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-style: 16px;
+    color: #00a4ff;
+    border: 1px solid #00a4ff;
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    font-style: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a {
+    font-style: 12px;
+    color: #333;
+}
+
+.bignav {
+    position: fixed;
+    left: 150px;
+    top: 250px;
+}
+

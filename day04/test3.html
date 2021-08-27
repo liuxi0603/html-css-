@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* 只给定宽,没指定高度，背景色不起作用 */
+            /* 给定高度，未指定宽度，背景色起作用，盒子的宽度默认和父级元素一样宽 */
+            /* width: 1000px;
+            background-color: palevioletred; */
+            width: 1000px;
+            border: 1px solid blueviolet;
+        }
+
+        .one {
+            width: 300px;
+            height: 200px;
+            background-color: powderblue;
+        }
+
+        .two {
+            width: 300px;
+            height: 300px;
+            background-color: steelblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,654 @@
+
+/* 注意，之前我们都是将css样式和html写在一起 */
+/* 现在css文件和html文件不再同一级，需要修改路径url */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?vxoilj');
+    src:  url('../fonts/icomoon.eot?vxoilj#iefix') format('embedded-opentype'),
+          url('../fonts/icomoon.ttf?vxoilj') format('truetype'),
+          url('../fonts/icomoon.woff?vxoilj') format('woff'),
+          url('../fonts/icomoon.svg?vxoilj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+.main {
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+.focus {
+    position: relative;
+    float: left;
+    width: 721px;
+    height: 455px;
+}
+
+.focus .prev,
+.next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 20px;
+    height: 30px;
+    background-color: rgba(0,0,0,.7); 
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+
+.focus .prev {
+    left: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.focus .next {
+    right: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.focus .promo-nav {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -35px;
+    width: 70px;
+    height: 13px;
+    background-color: rgba(255,255,255,.3);
+    border-radius: 7px;
+}
+
+.focus .promo-nav li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin: 3px;
+}
+
+.focus .promo-nav li:nth-child(3) {
+    background-color: tomato;
+}
+
+.newsflash {
+    float: right;
+    width: 250px;
+    height: 455px;
+}
+
+.news {
+    height: 165px;
+    border: 1px solid #e4e4e4;
+}
+
+.new-hd {
+    height: 33px;
+    line-height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+    padding: 0 15px;
+}
+
+.new-hd h5 {
+    float: left;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.new-hd .more {
+    float: right;
+}
+
+.new-hd .more::after {
+    font-family: 'icomoon';
+    content: '\e90a';
+}
+
+.new-bd {
+    /* 上、左右、下的padding值 */
+    padding: 5px 15px 0;
+}
+
+.new-bd ul li {
+    height: 24px;
+    line-height: 24px;
+
+}
+
+.lifeservice {
+    overflow: hidden;
+    /* 从.news的边框下沿量到.lifeservice边框下沿，210px-1px=209px */
+    height: 209px;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+
+.lifeservice ul {
+    width: 252px;
+}
+
+.lifeservice ul li {
+    float: left;
+    width: 63px;
+    height: 71px;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: center;
+}
+
+.lifeservice ul li i {
+    /* i属于块级元素，每个小li有一个i和p，将i转成行内块元素，则可以使用text-align: center*/
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    margin-top: 12px;
+}
+
+.lifeservice ul li:nth-child(1) i {
+    background: url(../images/icon.png) no-repeat -17px -17px;
+}
+.lifeservice ul li:nth-child(2) i {
+    background: url(../images/icon.png) no-repeat -79px -17px;
+}
+.lifeservice ul li:nth-child(3) i {
+    background: url(../images/icon.png) no-repeat -142px -17px;
+}
+.lifeservice ul li:nth-child(4) i {
+    background: url(../images/icon.png) no-repeat -206px -16px;
+}
+.lifeservice ul li:nth-child(5) i {
+    background: url(../images/icon.png) no-repeat -17px -89px;
+}
+.lifeservice ul li:nth-child(6) i {
+    background: url(../images/icon.png) no-repeat -78px -88px;
+}
+.lifeservice ul li:nth-child(7) i {
+    background: url(../images/icon.png) no-repeat -142px -88px;
+}
+.lifeservice ul li:nth-child(8) i {
+    background: url(../images/icon.png) no-repeat -206px -88px;
+}
+.lifeservice ul li:nth-child(9) i {
+    background: url(../images/icon.png) no-repeat -17px -159px;
+}
+.lifeservice ul li:nth-child(10) i {
+    background: url(../images/icon.png) no-repeat -79px -159px;
+}
+.lifeservice ul li:nth-child(11) i {
+    background: url(../images/icon.png) no-repeat -142px -159px;
+}
+.lifeservice ul li:nth-child(12) i {
+    background: url(../images/icon.png) no-repeat -208px -159px;
+}
+
+.lifeservice ul li:nth-child(2) {
+    position: relative;
+}
+
+.lifeservice ul li .decrease {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.bargain {
+    margin-top: 5px;
+}
+
+.recom {
+    height: 163px;
+    background-color: #ebebeb;
+    margin-top: 10px;
+}
+
+.recom .recon-hd {
+    float: left;
+    width: 205px;
+    height: 163px;
+    background-color: #5c5251;
+    padding-top: 30px;
+    /* img是行内块元素，可以使用text-align: center */
+    text-align: center;
+}
+
+.recom .recon-bd {
+    float: left;
+}
+
+.recon-bd ul li {
+    float: left;
+    position: relative;
+}
+
+.recon-bd ul li img {
+    /* 强制规定每个li里的图片大小，防止轻微像素混乱 */
+    width: 248px;
+    height: 143px;
+}
+
+.recon-bd ul li:nth-child(-n+3):after {
+    content: '';
+    /* after创建的是行内元素，无法直接设置大小，需要转换模式、或设置浮动、或加定位 */
+    /* 这里的长竖线可以用绝对定位做，这样不占用位子也不覆盖其他盒子 */
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+
+.guess {
+    margin-top: 30px;
+}
+
+.guess-hd {
+    height: 30px;
+}
+
+.guess-hd .favor {
+    float: left;
+    font-size: 18px;
+}
+
+.guess-hd .change {
+    float: right;
+    font-size: 12px;
+}
+
+.guess-hd .change::after {
+    font-family: 'icomoon';
+    content: '\e90e';
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.guess-bd {
+    overflow: hidden;
+    height: 232px;
+    border: 1px solid #d6d6d6;
+}
+
+.guess-bd ul {
+    width: 1202px;
+}
+
+.guess-bd ul li {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 232px;
+}
+
+/* .guess-bd ul li .img {
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 156px;
+} */
+
+.guess-bd ul li:nth-child(-n+5):after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 161px;
+    width: 1px;
+    height: 62px;
+    background-color: #d6d6d6;
+}
+
+.guess-bd ul li:nth-child(1) img {
+    margin: 15px 10px 0;
+}
+.guess-bd ul li:nth-child(2) img {
+    margin: 15px 70px 10px;
+}
+.guess-bd ul li:nth-child(3) img {
+    margin: 20px 25px 10px;
+}
+.guess-bd ul li:nth-child(4) img {
+    margin: 60px 30px 30px;
+}
+.guess-bd ul li:nth-child(5) img {
+    margin: 12px 30px 10px;
+}
+.guess-bd ul li:nth-child(6) img {
+    margin: 15px 60px 10px;
+}
+
+.guess-bd ul li p {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    padding-left: 33px;
+}
+
+.guess-bd ul li .price {
+    font-size: 18px;
+    color: #e14749;
+    margin-left: 0;
+    margin-top: 5px;
+}
+
+.interest {
+    margin-top: 28px;
+}
+
+.interest-hd {
+    height: 28px;
+    font-size: 18px;
+}
+
+.interest-bd {
+    height: 406px;
+    border: 1px solid #d6d6d6;
+}
+
+.interest-bd .one {
+    float: left;
+    width: 403px;
+    height: 404px;
+    background-color: #b8bddd;
+}
+
+.interest-bd .one p:nth-child(1) {
+    font-size: 18px;
+    color: #3b468d;
+    margin-top: 23px;
+    margin-left: 23px;
+}
+
+.interest-bd .one p:nth-child(2) {
+    font-size: 16px;
+    color: #3b468d;
+    margin-left: 23px;
+}
+
+.interest-bd .one img {
+    margin-top: 40px;
+    margin-left: 122px;
+}
+
+.interest-bd .two {
+    float: left;
+    width: 227px;
+}
+
+.interest-bd .two .two-hd {
+    width: 193px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    margin-left: 20px;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+.interest-bd .two .two-up {
+    overflow: hidden;
+    position: relative;
+    height: 210px;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+.interest-bd .hd {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 70px;
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+.interest-bd .intro {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #333333;
+    margin-left: 7px;
+}
+
+.interest-bd .red {
+    color: #e9424b;
+}
+
+.interest-bd .two .two-up img {
+    position: absolute;
+    top: 28px;
+    right: 0;
+}
+
+.interest-bd .two .two-down {
+    overflow: hidden;
+    position: relative;
+    height: 154px;
+}
+
+.two .two-down img {
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+
+.three {
+    float: left;
+    width: 406px;
+    height: 404px;
+    background-color: #f7f7f7;
+}
+
+.three .three-hd {
+    width: 365px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+    margin-left: 20px;
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+.three .three-up {
+    overflow: hidden;
+    position: relative;
+    height: 210px;
+    border-bottom: 1px dotted #d6d6d6;
+    padding-left: 40px;
+}
+.three .three-up img {
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+
+.three-down {
+    width: 406px;
+    height: 154px;
+}
+
+.three-down .down_l {
+    position: relative;
+    float: left;
+    width: 202px;
+    border-right: 1px dotted #d6d6d6;
+}
+
+.three-down .down_r {
+    position: relative;
+    float: left;
+    width: 202px;
+}
+
+.three-down .down_l img {
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+
+.three-down .down_r img {
+    position: absolute;
+    top: 18px;
+    right: 0;
+}
+
+.interest-bd .four {
+    float: left;
+    height: 404px;
+    padding: 10px 0 10px 8px;
+}
+
+/* 此处的小li不需要浮动，以为添加浮动后7个小li将在一行显示 */
+/* 此处li是标准流即可，一个li独占一行，每个li里面包含两个img */
+
+.interest-bd .four ul li img {
+    width: 74px;
+    height: 54px;
+}
+
+.interest-bd .four ul li .special img {
+    width: 74px;
+    height: 40px;
+}
+
+/* 没个li添加下边框，最后一个li没有下边框 */
+.interest-bd .four ul li {
+    border-bottom: 1px dotted #d6d6d6;
+}
+
+.interest-bd .four ul li:last-child {
+    border-bottom: 0;
+}
+
+/* 每个li里面的a转成行内块元素，其宽、高取决于里面的img大小，然后给每个li的第二个a添加左边框 */
+.interest-bd .four ul li a {
+    display: inline-block;
+}
+
+.interest-bd .four ul li a:nth-child(2) {
+    border-left: 1px dotted #d6d6d6;
+}
+
+.floor .w {
+    margin-top: 30px;
+}
+
+.box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+
+.box_hd h3 {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: 400;
+}
+
+.tab_list {
+    float: right;
+}
+
+.tab_list ul li {
+    float: left;
+    line-height: 30px;
+}
+
+.tab_list ul li a {
+    padding: 0 15px;
+}
+
+.box_bd {
+    height: 361px;
+}
+
+.tab_list_item > div {
+    float: left;
+}
+
+.col_210 {
+    width: 210px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.col_210 ul {
+    padding-left: 12px;
+}
+.col_210 ul li {
+    float: left;
+    width: 85px;
+    height: 34px;
+    line-height: 33px;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    margin-right: 10px;
+}
+.col_210 h5 {
+    float: left;
+    width: 186px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 30px;
+}
+.col_210 p {
+    float: left;
+    width: 186px;
+    font-size: 12px;
+    margin-bottom: 19px;
+}
+.col_210 img {
+    margin-bottom: 30px;
+}
+
+.col_329 {
+    width: 329px;
+}
+
+.col_221 {
+    width: 221px;
+    border-right: 1px solid #ccc;
+}
+
+/* 一般情况下，a如果包含有宽度的盒子，a需要转成块级元素更安全 */
+.bb {
+    display: block;
+    border-bottom: 1px solid #ccc;
+}
+
+.col_219 {
+    width: 219px;
+}
+
+.gap {
+    height: 64px;
+    background-color: #f7f7f7;
+    margin-bottom: 28px;
+}
+
+/* li浮动且没有指定宽、高，盒子大小取决于li的内容撑开的大小 */
+.gap ul li {
+    float: left;
+    margin: 12px 0;
+}
+.gap ul li img {
+    width: 119px;
+    height: 40px;
+}
+.gap ul li:nth-child(-n+9) {
+    border-right: 1px dotted #ccc;
+}
+
+
+
+

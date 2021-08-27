@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 86px;
+            height: 86px;
+            background-color: tomato;
+            padding-top: 21px;
+        }
+
+        .icon {
+            position: relative;
+            width: 108px;
+            height: 43px;
+            margin-left: 21px;
+        }
+
+        .icon img {
+            position: absolute;
+            width: 43px;
+            height: 43px;
+            background-repeat: no-repeat;
+            
+        }
+
+        .ico img:first-child {
+            float: left;
+            left: 0;
+        }
+
+        .icon img:last-child {
+            float: right;
+            right: 0;
+            display: none;
+            transition: all 0.7s;
+        }
+
+        .box:hover .icon img:last-child{
+            display: block;
+            right: 64px;
+        }
+
+        /* .box:hover .icon{
+            margin-left: -43px;
+        }  */
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="icon">
+            <img src="imgs/one.jpg">
+            <img src="imgs/two.jpg">
+        </div>
+    </div>
+</body>
+</html>

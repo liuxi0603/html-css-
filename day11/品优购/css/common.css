@@ -1,0 +1,367 @@
+
+/* 注意，之前我们都是将css样式和html写在一起 */
+/* 现在css文件和html文件不再同一级，需要修改路径url */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?vxoilj');
+    src:  url('../fonts/icomoon.eot?vxoilj#iefix') format('embedded-opentype'),
+          url('../fonts/icomoon.ttf?vxoilj') format('truetype'),
+          url('../fonts/icomoon.woff?vxoilj') format('woff'),
+          url('../fonts/icomoon.svg?vxoilj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.shortcut {
+    /* 宽度写不写都无所谓，不写默认和body一样宽 */
+    /* width: 100%; */
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 有多处字体需要设置为红色 */
+.style_red {
+    color: #c81623;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+/* 设置部分小li样式为竖线：可以通过设置类名或下面的方式 */
+.shortcut .fr ul li:nth-child(even){
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+/* 小三角图标的做法：在个别小li中插入em、i小盒子或者通过伪元素选择器 */
+.arrow-icon::after {
+    font-family: 'icomoon';
+    content: '\e908';
+    margin-left: 6px;
+    color: #666;
+}
+
+.header {
+    position: relative;
+    height: 106px;
+}
+
+.header .logo {
+    position: absolute;
+    width: 171px;
+    height: 61px;
+    top: 25px;
+}
+
+.header .logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* 将文字隐藏 */
+    font-size: 0;
+}
+
+.search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+/* input和button都属于块元素，默认两个盒子间有一定缝隙，可以添加浮动，浮动的元素默认没有缝隙
+或者通过定位来消除缝隙 */
+.search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+    color: #fff;
+}
+
+.search .hotwords {
+    width: 80px;
+    height: 43px;
+}
+
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+
+.hotwords ul li {
+    float: left;
+    margin: 0 12px;
+}
+
+.shopcar {
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    width: 140px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border: 1px solid #dfdfdf;
+}
+
+/* before、after创建的是行内元素，相当于文本，可以修改颜色 */
+.shopcar::before {
+    font-family: 'icomoon';
+    content: '\e90c';
+    margin-right: 5px;
+    color: #b1191a;
+}
+
+.shopcar::after {
+    font-family: 'icomoon';
+    content: '\e90a';
+    margin-left: 10px;
+}
+
+.count {
+    position: absolute;
+    top: -5px;
+    /* 定位写左边距离而不写right的原因：当count数量增加撑开盒子时，会往右边走 */
+    left: 105px;
+    /* right: 20px; */
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    background-color: #e60012;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0;
+}
+
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.nav .dropdown {
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color: #b1191a;
+}
+
+/* dt盒子高度100%，占满了dropdown盒子，dd盒子只能在下面显示-溢出 */
+.nav .dropdown .dt {
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.nav .dropdown .dd {
+    width: 100%;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 2px;
+}
+
+.dropdown .dd ul li{
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    /* 因为顿号不包含在a标签中，所以需要在li中设置顿号的颜色 */
+    color: #fff;
+    padding-left: 10px;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropdown .dd ul li:hover a {
+    color: #c81623;
+}
+
+.dropdown .dd ul li::after {
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\e90a';
+    top: 1px;
+    right: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav .navitems {
+    float: left;
+    margin-left: 10px;
+}
+
+.nav .navitems ul li {
+    float: left;
+}
+
+.nav .navitems ul li a {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 25px;
+    font-size: 16px;
+}
+
+.footer {
+    height: 415px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+
+.mod_service {
+    /* 宽度不写则默认和父盒子一样宽 */
+    /* width: 100%; */
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mod_service ul li {
+    float: left;
+    width: 240px;
+    height: 50px;
+    padding-left: 25px;
+}
+
+.mod_service ul li h5 {
+    /* 图片所在的盒子浮动，文字会环绕显示 */
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+}
+
+.mod_service ul li:nth-child(1) h5 {
+    background: url(../images/icon.png) no-repeat -252px -3px;
+}
+
+.mod_service ul li:nth-child(2) h5 {
+    background: url(../images/icon.png) no-repeat -254px -53px;
+}
+.mod_service ul li:nth-child(3) h5 {
+    background: url(../images/icon.png) no-repeat -257px -106px;
+}
+.mod_service ul li:nth-child(4) h5 {
+    background: url(../images/icon.png) no-repeat -258px -156px;
+}
+.mod_service ul li:nth-child(5) h5 {
+    background: url(../images/icon.png) no-repeat -258px -209px;
+}
+
+.service_txt h4 {
+    font-size: 14px;
+    padding-top: 4px;
+}
+.service_txt p {
+    font-size: 12px;
+}
+
+.mod_help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    /* padding-top: 20px;
+    padding-left: 50px; */
+}
+
+.mod_help dl {
+    float: left;
+    width: 200px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.mod_help dl dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.mod_help dl dd {
+    font-size: 12px;
+}
+
+/* .mod_help dl:last-child {
+    width: 90px;
+    text-align: center;
+}  */
+
+ .wx {
+    width: 92px;
+    height: 92px;
+    margin-left: -10px;
+    background: url(../images/wx.jpg) no-repeat;
+}
+
+.mod_copyright {
+    /* height: 118px; */
+    padding-top: 20px;
+    text-align: center;            
+}
+
+.links {
+    margin-bottom: 15px;
+}
+
+.links ul li {
+    float: left;
+}
+
+.links ul {
+    height: 12px;
+    line-height: 12px;
+    margin-left: 200px;
+}
+
+.links ul li:nth-child(odd) {
+    font-size: 12px;
+    color: #fff;
+}
+
+.links ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 0 10px;
+}
+
+.copyright {
+    line-height: 20px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            position: relative;
+            width: 155px;
+            height: 225px;
+            background-color: palevioletred;
+        }
+
+        .box span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-style: 0;
+            top: 10px;
+            /* 注意左右的移动原理 */
+            /* right: -20px;  */
+            left: 155px;
+            border: 10px solid transparent;
+            border-left-color: palevioletred;
+        }
+
+        .box2 {
+            position: relative;
+            width: 155px;
+            height: 225px;
+            margin-top: 50px;
+            background-color: teal;
+        }
+
+        .box2 span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-style: 0;
+            top: -20px;
+            left: 120px;
+            border: 10px solid transparent;
+            border-bottom-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+    </div>
+
+    <div class="box2">
+        <span></span>
+    </div>
+</body>
+</html>
